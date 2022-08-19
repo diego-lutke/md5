@@ -1,6 +1,10 @@
 -- https://www.ietf.org/rfc/rfc1321.txt and contains optimizations from
 -- https://en.wikipedia.org/wiki/MD5.
 
+local message = "this is a test"
+
+
+
 local MD5Buffer = 
 	{
     A = "0x67452301",
