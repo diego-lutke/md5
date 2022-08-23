@@ -2,8 +2,27 @@
 -- https://en.wikipedia.org/wiki/MD5.
 
 
+local message = "T"
+local t_message = {}
+
+local function toBits(num)
+    -- returns a table of bits, least significant first.
+    local t={} -- will contain the bits
+    while num>0 do
+        rest=math.fmod(num,2)
+        t[#t+1]=rest
+        num=(num-rest)/2
+    end
+    return t
+end
+''
+for match in message:gmatch(".") do
+    t_message[#t_message+1] = toBits(string.byte(match))
+end
 
 
+
+print(t_message[1][3])
 --[[
 0 - input
 ex of original msg = 1000
